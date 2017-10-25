@@ -1,0 +1,175 @@
+			body{
+				background-color: #0AC4EF;
+			}
+			.container{    
+				width: 55%;
+    			margin: 35px auto;
+			}
+			.regesiter_box{
+				padding: 40px 50px;
+				background: #FFFFFF;
+				border-radius: 15px;
+			}
+			.rgsBox_left,.rgsBox_right{
+				float: left;
+				text-align: left;
+			}
+			.rgsBox_left{
+				width: 60%;
+				position: relative;
+			}
+			.rgsBox_right{
+				/*width:40%;*/
+				width: 35%;
+    			text-align: center;
+    			font-size: 12px;
+    			margin-left: 28px;
+    			color: #999999;
+			}
+			.rgsBox_left::after{
+				content: "";
+				position: absolute;
+				top: -15px;
+    			right: 8px;
+    			height: 450px;
+				border-right: 1px dashed #CCC;
+			}
+			.rgs_method{
+				border-bottom: 1px solid #CCC;
+				width: 85%;
+				/*width: 100%;*/
+				position: relative;
+    			z-index: 5;
+    			margin-bottom: 30px;
+			}
+			.rgs_method div{
+				font-size: 19px;
+				float: left;
+				width: 50%;
+				text-align: center;
+				padding-bottom: 15px;
+				cursor: pointer;    
+			}
+			.rgs_method div.cur{
+				color:#0AC5EF;
+			}
+			.rgs_method::after{
+				content: "";
+				border-bottom: 1px solid #0AC5EF;
+				width: 50%;    
+				display: block;
+				position: absolute;
+				bottom: -1px;
+				z-index: 10;
+				left: 0;
+				transition: left ease 0.5s;
+			}
+			.rgs_method.curent::after{
+				left: 50%;
+			}
+			.rgsBox_left ul{    
+				width: 85%;
+				/*width: 100%;*/
+			}
+			.rgsBox_left ul li input{
+				width: 100%;
+				height: 100%;  
+				border: 1px solid #DDD;
+				text-indent: 10px;
+			}
+			.rgsBox_left ul li {
+				margin-bottom: 22px;
+				height: 38px;
+			}
+			.rgsBox_left ul li:nth-child(3) input,.rgsBox_left ul li:nth-child(4) input{
+				width: 55%;
+			}
+			.rgsBox_left ul li>span{
+				width: 40%;
+				float: right;
+				height: 100%;
+				background-color: #0AC4EF;
+				border: 1px solid transparent;
+				font-size: 14px;
+				line-height: 40px;
+				color: #FFFFFF;
+				text-align: center;
+				cursor: pointer;
+			}
+			.rgsBox_left ul li p{
+				float: left;
+				width: 34.2%;
+				padding: 12px 25px;
+				border: 1px solid #DDDDDD;
+				text-align: center;
+			}
+			.rgsBox_left ul li p:nth-child(1){
+				border-right: none;
+			}
+			.rgsBox_left ul li.xieyiRg input{
+				display: none;
+			}
+			.rgsBox_left ul li label::before{
+				content: "";
+				display: inline-block;
+				width: 11px;
+				height: 11px;
+				background-color: #FFF;
+				overflow: hidden;
+				border:1px solid #0AC4EF
+			}
+			.rgsBox_left ul li label.xieyiclick::before{
+				background: url(../static/img/ture.png) center 1px;
+				background-size: contain;
+			}
+			.rgs_arrow{
+				position: absolute;
+				left: 25%;
+				bottom: 0;
+				border: 6px solid transparent;
+				border-bottom-color: #0AC5EF;
+				transition: left ease 0.5s;
+			}
+			.rgs_arrow.curr{
+				left: 75%;
+			}
+			.typeRg{
+				cursor: pointer;
+			}
+			.typeRg p.typeClick{
+				background-color: #0AC5EF;
+				color: #FFFFFF;
+			}
+			#checkImg{
+				width: 100%;
+				height: 100%;
+			}
+			#regbtn{
+				color: #FFFFFF;
+			}
+			.regbtn{
+				background: #00A9E1;
+			}
+			.dragRegBtn{
+				background-color: #DDD;
+				position: relative;
+				height: 100%;
+				color: #CCC;
+			}
+			.dragRegBtn div{
+				text-align: center;
+				height: 100%;
+				line-height: 38px;
+				color: #000;
+				user-select: none; 
+			}
+			.dragRegBtn div.huakuai{
+				border:1px solid #CCC;
+				cursor: all-scroll;
+				background-color: #FFF;
+				width:13%;
+				position:absolute;
+				left:0;
+				color: #ccc;
+				box-sizing: border-box;
+			}

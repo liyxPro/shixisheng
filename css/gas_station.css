@@ -1,0 +1,243 @@
+		.container{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.container::after{
+			content:"";
+			display: table;
+			clear: both;
+		}
+		.jiayou_left,.jiayou_right{
+			/*background: #FFFFFF;*/
+			
+			/*overflow: hidden;*/
+		}
+			.jiayou_left{
+				width: 69%;
+			}
+			.jiayou_right{
+				width: 30%;
+				margin-left: 10px;
+			}
+			.artical_tag {
+				background: #FFFFFF;
+				overflow: hidden;
+			}
+			.artical_tag li{
+				width: 105px;
+				height: 78px;
+				line-height: 78px;
+				text-align: center;
+				float: left;
+				cursor:pointer;
+			}
+			.artical_tag li:not(.artical_tag_click):hover{
+				color:#F45973;
+			}
+			.artical_tag li.artical_tag_click{
+				background: #F45973;
+				color: #FFFFFF;
+			}
+			/*:not(:first-child)*/
+			#at_content .artical_list{
+				padding-bottom: 35px;
+    			background: #FFF;
+			}
+			#at_content .artical_list li:first-child {
+				border-bottom: 1px solid #C1C1C1;
+				padding: 35px 30px;
+			}
+			.artical_list li:hover{
+				cursor: pointer;
+				box-shadow: 0 0 5px #999999;
+			}
+			.artical_list li{
+				background-color: #FFFFFF;
+				padding: 25px 16px;
+				margin-top: 10px;
+			}
+			.artical_list li:after{
+				content:"";
+				display: table;
+				clear: both;
+			}
+			.artical_list .list_left{    
+				width: 29%;
+    			margin-right: 14px;
+				height: 152px;
+				overflow: hidden;
+				position: relative;
+			}
+			.list_left:before{
+				content: "经验谈";
+			    width: 14px;
+			    padding: 4px 9px;
+			    font-size: 14px;
+			    color: #FFFFFF;
+			    background-color: #EB3939;
+			    border-bottom-left-radius: 16px;
+			    border-bottom-right-radius: 16px;
+			    position: absolute;
+			    left: 10px;
+			}
+			.list_right{
+				width: 69.2%;
+			}
+			.list_right h1{
+				font-size: 18px;
+				font-weight: bold;
+			}
+			.list_right p{
+				margin-top: 40px;
+				color: #8797A6;
+				font-size: 14px;
+			}
+			.list_right div{
+				margin-top: 30px;
+			    text-align: right;
+			    color: #d0d0d0;
+			    font-size: 14px;
+			}
+			.list_right div span{
+				margin-right: 45px;
+			}
+			.page{
+				padding-left: 70px;
+    			margin-top: 40px;
+			}
+			.page span,.page ul li{
+				background: #B5D5E8;
+				color: #FFFFFF;
+				padding: 5px 10px;
+				border-radius: 5px;
+				float: left;
+				margin-right: 10px;
+				cursor: pointer;
+			}
+			.page span:hover,.page ul li:hover{
+				background-color: #02A0E9;
+			}
+			.page ul{
+				
+			}
+			.search_actical{
+				position: relative;
+				height: 78px;
+				background: #FFFFFF;
+				line-height: 78px;
+				padding: 0 20px;
+			}
+			.search_actical input{
+				width: 300px;
+				height: 32px;
+				padding-left: 10px;
+				border:1px solid #DDDDDD;
+				transition: border ease 0.5s; 
+			}
+			.search_actical input:focus{
+				border:1px solid #00A9E1;
+			}
+			.search_actical span{
+				position: absolute;
+				right: 40px;
+				cursor: pointer;
+			}
+			.share_artical{
+				padding: 20px;
+				background: #FFFFFF;
+				margin-top: 10px;
+				overflow: hidden;
+				line-height: 46px;
+			}
+			.share_artical ul {
+				overflow: hidden;
+				float: right;    
+			}
+			.share_artical ul li{
+				float: left;
+				width: 46px;
+				height: 46px;
+				border-radius: 50%;
+				background: #00A9E1;
+				margin-right: 15px;
+			}
+			.email_actical{
+				padding:43px 53px;
+				background: #FFFFFF;
+				margin-top: 10px;
+			}
+			.email_actical p{
+				padding-left: 60px;
+				width:200px ;
+				font-size: 16px;
+				color: #F45973;
+				border: 1px solid #F45973;
+				border-radius: 10px;
+				line-height: 30px;
+				height: 60px;
+			}
+			.hot_artical {
+				background: #FFFFFF;
+				margin-top: 10px;
+				padding-top: 20px;
+			}
+			.hot_artical  h1{
+				font-size: 20px;
+				font-weight: bold;
+				border-left: 4px solid #F45973;
+				padding: 8px 25px;
+				margin-bottom: 15px;
+			}
+			.hot_artical p{
+				padding-left: 20px;
+				padding-bottom: 35px;
+			}
+			.hot_artical p a{
+				color: #666666;
+				font-size: 14px;
+			}
+			.like{
+				width:242px;
+				height: 72px;
+				background: #F45973;
+				margin: 0 auto;
+				line-height: 72px;
+				color: #FFFFFF;
+				font-size: 19px;
+				text-align: center;
+				cursor: pointer;
+			}
+			.zhanshi_artical{
+				margin-top:35px;
+				background: #FFFFFF;
+				padding: 35px 15px;
+				overflow: hidden;
+			}
+			.zhanshi_artical ul li{
+				float: left;
+				font-size: 14px;
+			}
+			.zhanshi_artical ul li:not(:last-child){
+				margin-right: 22px;
+			}
+			.zhanshi_artical img{
+				width: 183px;
+				height: 115px;
+			}
+			.zhanshi_artical h1{
+				width: 183px;
+			}
+			.zhanshi_artical a{
+				width: 100%;
+				height: 100%;
+				display: block;
+				color: #000000;
+			}
+     .atc_tag{
+     	background: #FFFFFF;
+     	padding-bottom: 50px;
+     	font-size: 14px;
+     	color: #999;
+     	padding: 0px 30px 35px;
+     	
+     }

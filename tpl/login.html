@@ -1,0 +1,71 @@
+<div class="wrap">
+	<img class="logo_login" src="static/img/logo.png" alt="shixiseng" />
+	<span id="closeX">&times;</span>
+	<div class="model_box">
+		<p>
+		 <input type="text" name="uname" id="uname" placeholder="请输入手机号/邮箱"/>	
+		</p>
+		<p>
+		 <input type="password" name="pwd" id="upwd" placeholder="请输入密码"/>
+		</p>
+		<p>
+		 <label class="left" for="rember">
+		 	<input type="checkbox" name="remberme" id="rember" value="" />记住我
+		 </label>
+		 <a class="right" href="#">找回密码</a>
+		</p>
+		<button id="login">登陆</button>
+		<p>没有账号，直接<a	href="#">注册</a></p>
+		<hr />
+		<p>使用以下账号直接登录</p>
+		<p style="font-size: 35px;
+margin-top: 8px;">
+		 			<svg class="icon" aria-hidden="true">
+  						<use xlink:href="#icon-weibo"></use>
+					</svg>
+					<svg class="icon" aria-hidden="true">
+  						<use xlink:href="#icon-qq"></use>
+					</svg>
+					<svg class="icon" aria-hidden="true">
+  						<use xlink:href="#icon-weixin"></use>
+					</svg>
+		</p>
+	</div>
+</div>
+<script src="icon/iconfont.js"></script>
+<script type="text/javascript">
+ $(function(){
+ 	var phoneOrEmail=null;
+	var upwd=null;
+	$(".model_box input").on("blur",function(){
+		if(this.id=="uname"){
+			phoneOrEmail=this.value;
+		}
+		if(this.id=="upwd"){
+			upwd=this.value;
+		}
+	})
+ 	$("#login").click(function(){
+		console.log(phoneOrEmail,upwd);
+		if(phoneOrEmail&&upwd){
+			$.ajax({
+				type:"post",
+				data:{"phoneOrEmail":phoneOrEmail,"upwd":upwd},
+				url:"data/user_login.php",
+				success:function(result){
+					if(result.code=="1"){
+						localStorage.setItem("type",result.utype);
+						localStorage.setItem("name",result.uname);
+						localStorage.setItem("id",result.uid);
+						window.location.href="index.html";
+					}
+				},
+				error:function(){
+					console.log("访问出错");
+				}
+			});
+		}
+	})
+ })
+	
+</script>

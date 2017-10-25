@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=UKv0dCGZwalz4m3h6CPvk2KgNDD1dqww"></script>
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+			
+			.detail_left{
+				background: #FFFFFF;
+				width: 70%;
+			}
+			.detail_right{
+				margin-left: 30px;
+				width: 27%;
+			}
+			.detail_left h1{
+				padding: 25px 30px; 
+				font-size: 25px;
+				color: #02A0E9;    
+				border-bottom: 1px solid #D6D6D6;
+			}
+			.detail_left h1:last-child{
+				border-top: 1px solid #D6D6D6;
+				border-bottom:none;
+				text-align: center;
+			}
+			.detail_left h1 button{
+				font-size: 16px;
+				background: #0AC4EF;
+				border-radius: 6px;
+				padding: 15px 50px;
+				border: none;
+				color: #FFFFFF;
+			}
+			span.timeFresh{
+				float: right;
+				font-size: 15px;
+				color: #A6999E;
+				margin-top: 6px;
+			}
+			.detail_box{
+				padding: 35px 25px;
+			}
+			.detail_box ul::after{
+				content: "";
+				display: table;
+				clear: both;
+			}
+			.detail_box ul li{
+				float: left;
+			}
+			.detail_box p{
+				margin: 15px 0;
+				padding: 25px 0;
+			}
+			.detail_box p:nth-child(2){
+				border-bottom: 1px solid #D6D6D6;
+				padding-bottom: 40px;
+			}
+			.detail_box ul.detail_list li,.detail_box span,.detail_box div{
+				font-size: 14px;
+				color:#555555;
+			}
+			.company_jianjie{
+				padding:35px 25px;
+				background: #FFFFFF;
+				text-align: center;
+			}
+			.company_jianjie h1{
+				font-size: 20px;    
+				margin-top: 10px ;
+				padding-bottom: 25px;
+				border-bottom: 1px solid #D1D1D1;
+			}
+			.company_jianjie img{
+				width: 110px;
+				border: 1px solid #D1D1D1;
+			}
+			.share_box,.baidu_map{
+				background: #FFFFFF;
+				padding: 20px 15px 15px;
+				margin-top: 20px;
+				overflow: hidden;
+			}
+			.share_box a{
+				float: left;
+				margin-right: 8px;
+				background: url(static/img/iconList.png);
+				width:24px;
+				height: 24px;
+				/*background-size: cover;*/
+			}
+			.share_box a.weibo{
+				background-position: 0 0;
+			}
+			.share_box a.weixin{
+				background-position-y:-27px;
+			}
+			.share_box a.qq{
+				background-position-y:-52px;
+			}
+			.share_box a.qzone{
+				background-position-y:-78px;
+			}
+			.share_box a.qqwb{
+				background-position-y:-105px;
+			}
+			.share_box a.renren{
+				background-position-y:-132px;
+			}
+			.share_box a.douban{
+				background-position-y:-159px;
+			}
+			#allmap{
+				height:180px;
+				margin:10px auto;
+			}
+		</style> 
+	</head>
+	<body>
+		<div id="activity">
+			<span id="close">
+				&times;
+			</span>
+		</div>
+		<div id="nav"></div>
+		<div id="main">
+			<div class="wrap">
+				<div class="detail_left left">
+					<h1>字幕组英文翻译【part-time】<span class="timeFresh">2016-12-19 10:11:39刷新</span><span class="shoucang"></span><span class="alert"></span></h1>
+					<div class="detail_box">
+						<ul>
+							<li>70-80/天 <em>丨</em></li>
+							<li>广州<em>丨</em></li>
+							<li>本科<em>丨</em></li>
+							<li>3天/周<em>丨</em></li>
+							<li>实习3个月</li>       
+						</ul>
+						<p>职位诱惑：<span>专业培训、有竞争力的实习工资</span></p>
+						<p>职位描述</p>
+							<ul class="detail_list">
+								<li>1. 六级520分以上/托福阅读听力23以上/雅思阅读听力7以上/GRE720以上/GMAT700以上/专四、专八三口三笔优秀者（如果你没有达到上述要求，但是对自己的英语、翻译能力都非常有信心，也可投递简历）</li>
+								<li>2. 国内外重点本科或以上学历，暂不接受初高中生（注意本组只招收有听译能力的校翻人员） </li>
+								<li>3. 能独立完成工作，工作认真负责，有充足的上网时间及方便的上网条件</li>
+								<li>4. 有国外一年以上生活/工作经验的同学优先考虑 </li>
+								<li>5. 爱好英语，有耐心、毅力，能坚持长期工作，责任感强</li>
+							</ul> 
+						<p>截止日期</p>
+						<div>2017-01-18</div>
+						
+					</div>
+					<h1><button>投个简历</button></h1>
+				</div>
+				<div class="detail_right right">
+					<div class="company_jianjie">
+						<img src="img/54FAFD4755756E292B3742FF1D4403A0.png" alt="" />
+						<h1>网易有道</h1>
+						<p><span></span>2000人</p>
+						<p><a href="www.youdao.com">www.youdao.com/</a></p>
+					</div>
+					<div class="share_box">
+						<a class="weibo" href="#"></a>
+						<a class="weixin" href="#"></a>
+						<a class="qq" href="#"></a>
+						<a class="qzone" href="#"></a>
+						<a class="qqwb" href="#"></a>
+						<a class="renren" href="#"></a>
+						<a class="douban" href="#"></a>
+					</div>
+					<div class="baidu_map">
+						<p><span></span>网易北京研发中心</p>
+						<div id="allmap"></div>
+					</div>
+				</div>
+		   
+			</div>
+		</div>
+		<div class="model_bg" style="display: none;">
+			
+		</div>
+		<div id="footer">
+			
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#nav").load("tpl/header.html");
+			$("#footer").load("tpl/footer.html");
+			$(".model_bg").load("tpl/login.html");
+			
+		})
+		
+	</script>
+	<script type="text/javascript">
+		//封装函数api,传入地点参数,并设置地图定位
+		
+		// 百度地图API功能
+		var map = new BMap.Map("allmap");
+		var point = new BMap.Point(116.404, 39.915);
+		map.centerAndZoom(point, 15);
+		
+		// 创建地址解析器实例
+		var myGeo = new BMap.Geocoder();
+		// 将地址解析结果显示在地图上,并调整地图视野
+		
+		myGeo.getPoint("网易北京研发中心", function(point){
+			if (point) {
+				map.centerAndZoom(point, 16);
+				var marker = new BMap.Marker(point);  // 创建标注
+				map.addOverlay(marker); // 将标注添加到地图中
+				marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+//				marker.addControl(new )
+			}else{
+				alert("您选择地址没有解析到结果!");
+			}
+		}, "北京市");           
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+</script>
+</html>

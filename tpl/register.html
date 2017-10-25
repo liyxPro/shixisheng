@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/register.css" />
+		
+	</head>
+	<body>
+		<div class="container">
+			<a href="../index.html"><img src="../static/img/logo.png"/></a>
+			<div class="regesiter_box">
+				<div class="rgsBox_left">
+					<div class="rgs_method">
+						<div class="rgs_phone cur">手机注册</div>
+						<div class="rgs_email">邮箱注册</div>
+						<p style="clear: both;">
+							
+						</p>
+						<span class="rgs_arrow"></span>
+					</div>
+					<ul class="phone">
+						<li>
+							<input type="text" name="phoneNum" placeholder="请输入手机号" maxlength="11"/>
+						</li>
+						<li><input type="password" name="pwd" placeholder="请输入密码" /></li>
+						<li>
+							<input type="text" name="img_check" placeholder="请输入图形验证码"/>
+							<span id="img_checking">
+								<canvas id="checkImg"></canvas>
+							</span>
+						</li>
+						<li>
+							<input type="text" name="message_check" placeholder="请输入短信验证码"/>
+							<span id="message_checking">获取短信验证码</span>
+						</li>
+						<li class="typeRg">
+							<p><svg class="icon" aria-hidden="true">
+ 									<use xlink:href="#icon-student"></use>
+								</svg>
+								<span class="0">学生</span></p>
+							<p><svg class="icon" aria-hidden="true">
+ 									<use xlink:href="#icon-company"></use>
+								</svg>
+								<span class="1">企业</span></p>
+						</li>
+						<li class="xieyiRg">
+							<input type="checkbox" name="agree" id="agree"/>
+							<label for="agree">我已阅读并同意
+								<a href="javascript:void(0)">《实习僧用户协议》</a>
+							</label>
+						</li>
+						<li>
+							<input type="button" name="regbtn" id="regbtn"  value="注册" />
+						</li>
+					</ul>
+					<ul class="email" style="display: none;">
+						<li>
+							<input type="text" name="email" placeholder="请输入常用邮箱地址" />
+						</li>
+						<li><input type="password" name="pwd" placeholder="请输入密码" /></li>
+						<li>
+							<div class="dragRegBtn">
+							   <div class="huakuai">>></div>
+						       <div>拖动滑块验证</div>
+							</div> 
+						</li>
+						<li class="typeRg">
+							<p><svg class="icon" aria-hidden="true">
+ 									<use xlink:href="#icon-student"></use>
+								</svg>
+								<span class="0">学生</span></p>
+							<p><svg class="icon" aria-hidden="true">
+ 									<use xlink:href="#icon-company"></use>
+								</svg>
+								<span class="1">企业</span></p>
+						</li>
+						<li class="xieyiRg">
+							<input type="checkbox" name="agree" id="agree"/>
+							<label for="agree">我已阅读并同意
+								<a href="javascript:void(0)">《实习僧用户协议》</a>
+							</label>
+						</li>
+						<li>
+							<input type="button" name="regbtn" id="regbtn"  value="注册" />
+						</li>
+					</ul>
+				</div>
+				<div class="rgsBox_right">
+					<p style="font-size: 15px;">
+						已有账号，直接<a	href="loginUser.html">登陆</a>
+					</p>
+					<p>
+						使用第三方账号登陆
+					</p>
+					<p>
+						<img src="" alt="" />
+						<img src="" alt="" />
+						<img src="" alt="" />
+					</p>
+					<p>
+						<img src="" alt="" />
+						[扫描下载实习僧APP]
+					</p>
+					  
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+		<script src="../icon/iconfont.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$(".rgs_method div").on("click",function(){
+				$(this).addClass("cur").siblings().removeClass("cur");
+				if($(this).text()=="邮箱注册"){
+					$(this).parent().addClass("curent");
+					$(".rgs_arrow").addClass("curr");
+					$("ul.phone").css("display","none").siblings("ul").css("display","block");
+				}else{
+					$(this).parent().removeClass("curent");
+					$(".rgs_arrow").removeClass("curr");
+					$("ul.email").css("display","none").siblings("ul").css("display","block");
+				}
+			})
+			var xieyiCheck=false;
+			$(".xieyiRg label").on("click",function(event){
+				if($(".xieyiRg label").hasClass("xieyiclick")){
+					$(".xieyiRg label").removeClass("xieyiclick");
+				}else{
+					$(".xieyiRg label").addClass("xieyiclick");
+				}
+				if($("input[name=agree]").is(":checked")){
+					xieyiCheck=false;
+				}else{
+					xieyiCheck=true;
+					
+				}
+				isReg();
+				event.stopPropagation();
+			})
+			function clea(){
+    			var canvas = $('#checkImg')[0];
+    			var context=canvas.getContext("2d"); 
+			    context.clearRect(0,0,canvas.width,canvas.height);
+			    context.beginPath();
+    		};
+			function checkImg(){
+			  var canvas = $('#checkImg')[0];                        //新建一个canvas
+			  var ctx = canvas.getContext("2d"); 
+			  ctx.font = '60px "Microsoft YaHei"';
+
+			  // 绘制文本
+			  let drawText = (text, x) => {
+			    ctx.save();
+			    // 旋转角度
+			    const angle = Math.random() / 10;
+			    // y 坐标
+			    const y = 100;
+			    ctx.rotate(angle);
+			    ctx.fillText(text, x, y);
+			    ctx.restore();
+			  }
+			
+			  // 随机画线
+			  let drawLine = () => {
+			    const num = Math.floor(Math.random() * 2 + 3);
+			    // 随机画几条彩色线条
+			    for (let i = 0; i < num; i++) {
+			      const color = '#' + (Math.random() * 0xffffff << 0).toString(16);
+			      const y1 = Math.random() * 150;
+			      const y2 = Math.random() * 150;
+			      // 画线
+			      ctx.strokeStyle = color;
+			      ctx.beginPath();
+			      ctx.lineTo(0, y1);
+			      ctx.lineTo(260, y2);
+			      ctx.stroke();
+			    }
+			  }
+			
+			  // 数字的文本随机从小写汉字、大写汉字、数字里选择
+			  const numArr = [
+			    '〇一二三四五六七八九',
+			    '0123456789',
+			    '零壹贰叁肆伍陆柒捌玖'  
+			  ];
+			  // 第一个数字
+			  const fir = Math.floor(Math.random() * 10);
+			  // 第二个数字
+			  const sec = Math.floor(Math.random() * 10);
+			  // 第三个数字
+			  const thi = Math.floor(Math.random() * 10);
+			  // 第四个数字
+			  const forth = Math.floor(Math.random() * 10);
+			  drawLine();
+			  const color = '#' + (Math.random() * 0xffffff << 0).toString(16);
+			  ctx.fillStyle = color;
+			  drawText(numArr[Math.floor(Math.random() * numArr.length)][fir], 20);
+			  drawText(numArr[Math.floor(Math.random() * numArr.length)][sec], 90);
+			  drawText(numArr[Math.floor(Math.random() * numArr.length)][thi], 150);
+			  drawText(numArr[Math.floor(Math.random() * numArr.length)][forth], 210);
+			  var str=[fir,sec,thi,forth].join("");
+			  return str;
+			}
+			checkNum=checkImg();
+			$("#img_checking").on("click",function(){
+				clea();
+				checkNum=checkImg();
+			})
+			
+			var register={
+				"uname":null,
+				"upwd":null,
+				"phone":null,
+				"utype":null
+			}
+			var reg=/^1(3|5|7|8)\d{9}$/;
+			var phoneCheck=false;
+			$("input[name=phoneNum]").on("blur",function(){
+				var that=this;
+				register.phone=$("input[name=phoneNum]").val();
+				if(!reg.test(register.phone)){
+					phoneCheck=false;
+					$(this).css("border-color","red");
+					isReg();
+				}else{
+					$.ajax({
+						type:"get",
+						url:"../data/isReg.php?phone="+register.phone
+					}).success(function(data){
+						/*if(data=="uname required"){
+							console.log("手机号为空");
+						}*/
+						if(data.code==400){
+							phoneCheck=false;
+							$(that).css("border-color","red");
+							isReg();
+						}else if(data.code==1){
+							phoneCheck=true;
+							$(that).css("border-color","");
+							isReg();
+						}
+					});
+				}
+				
+			})
+			var pwdCheck=false;
+			$("input[name=pwd]").on("blur",function(){
+				register.upwd=$("input[name=pwd]").val();
+				if(register.upwd.length<6||register.upwd.length>20){
+					pwdCheck=false;
+					$(this).css("border-color","red");
+				}else{
+					pwdCheck=true;
+					$(this).css("border-color","");
+				}
+				isReg();
+			})
+			var ifcheck=false;
+			$("input[name=img_check]").on("blur",function(){
+				var img_check=$(this).val();
+				if(checkNum!=img_check){
+					ifcheck=false;
+					$(this).css("border-color","red");
+				}else{
+					ifcheck=true;
+					$(this).css("border-color","");
+				}
+				isReg();
+			})
+			var typeCheck=false;
+			$(".typeRg").on("click","p",function(){
+				$(this).addClass("typeClick").siblings().removeClass("typeClick");
+				register.utype=$(this).children('span').attr("class");
+				typeCheck=true;
+			})
+			function isReg(){
+				if(phoneCheck&&pwdCheck&&ifcheck&&typeCheck&&xieyiCheck){
+					$("#regbtn").addClass("regbtn");
+					if(register.utype==0){
+						register.uname="stu"+register.phone;
+					}else if(register.utype==1){
+						register.uname="com"+register.phone;
+					}
+					return true;
+				}else{
+					$("#regbtn").removeClass("regbtn");
+					return false;
+				}
+			}
+			function regAjx(register){
+				$.ajax({
+					type:"post",
+					url:"../data/user_register.php",
+					data:register,
+					success:function(result){
+						console.log(result);
+						if(result.code==500){
+							console.log("失败")
+						}else if(result.code==1){
+							window.location.href="regSuc.html"; 
+						}
+					}
+				});
+			}
+			$("#regbtn").on("click",function(){
+				if(isReg()){
+					regAjx(register);
+				}else{
+					alert("输入有误！请检查您的输入内容");
+				}
+			})
+			
+		})
+		</script>
+	</body>
+</html>

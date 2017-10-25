@@ -1,0 +1,64 @@
+#content{
+   height:800px;
+   background: #FFF;
+   margin-top: 30px;
+   border: 1px solid transparent;
+    color:#8c778c;
+}
+.p_img{
+    margin-top: 80px;
+}
+.p_img p:first-child{
+    width: 120px;
+    margin: 20px auto 10px;
+}
+.p_img p:last-child{
+    width: 260px;
+    margin: 0px auto;
+}
+.p_img img{
+    width:120px;
+    height:120px;
+    border: 1px solid #CCC;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.p_form{
+    margin-top: 60px;
+    width: 830px;
+    margin: 60px auto 0;
+}
+.p_form>ul{
+    float: left;
+    width:50%;
+}
+.p_form>ul li{
+    margin-bottom: 20px;
+    line-height: 47px;
+    height: 47px;
+    vertical-align: middle;
+}
+.p_form ul input{
+    width: 280px;
+    padding: 5px 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+    height: 35px;
+    border: 1px solid #DDDDDD;
+}
+.p_form .checkEdu{
+    display: none;
+}
+.p_form ul li.gender input{
+    display: none;
+}
+.p_form ul li.gender label{
+    width: 34px;
+    height: 32px;
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px;
+    border-radius: 5px;
+}
