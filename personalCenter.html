@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>个人中心</title>		
+        <link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" href="css/personal.css"/>
+    </head>
+    <body>
+        <!--nav导航 -->
+		<div id="nav"></div>
+        
+        <!--content-->
+        <div class="wrap">
+            <div id="content">
+                <div class="p_img">
+                    <p> 
+                        <input type="file" name="pImg" value="" id="pImg" style="display: none">
+                        <label for="pImg">
+                            <img src="static/img/headerImg.png" alt="">
+                        </label>
+                    </p>
+                    <p>
+                        <span>尺寸：120px*120px 大小：小于5M</span>
+                    </p>
+                </div>
+                <div class="p_form">
+                    <ul>
+                        <li>
+                            真实姓名 <input type="text" placeholder="请填写真实姓名"/>
+                        </li>
+                        <li>
+                            所在城市 <input type="text" placeholder="请选择所在城市"/>
+                        </li>
+                        <li>
+                            最高学历 <input type="text" placeholder="请选择你的学历" readonly/>
+                                        <ul class="checkEdu">
+                                            <li>本科</li>
+                                            <li>硕士</li>
+                                            <li>博士</li>
+                                            <li>其他</li>
+                                        </ul>
+
+                        </li>
+                        <li>手机号码 <input type="text" placeholder="请填写你的手机号"/></li>
+                        <li>学校名称 <input type="text" placeholder="请填写你的学校"/></li>
+                    </ul>
+                    <ul>
+                        <li class="gender">
+                            真实性别
+                            <label for="man">男</label>
+                            <input type="radio" value="男" name="gender" id="man"/>
+                            <label for="woman">女</label>
+                            <input type="radio" value="女" name="gender" id="woman" />
+                        </li>
+                        <li>
+                            出生年月
+
+                        </li>
+                        <li>
+                            毕业时间
+                        </li>
+                        <li>
+                            邮箱地址
+                        </li>
+                        <li>
+                            专业
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--footer -->
+		<div id="footer"></div>
+		<div class="model_bg" style="display: none;"></div>
+        <script src="js/jquery-1.11.3.js"></script>
+        <script>
+            $(function(){
+                $(".model_bg").load("tpl/login.html");
+	            $("#nav").load("tpl/header.html");
+	            $("#footer").load("tpl/footer.html");
+            })
+        </script>
+    </body>
+</html>
