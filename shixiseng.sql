@@ -2,27 +2,49 @@ SET NAMES UTF8;
 DROP DATABASE IF EXISTS shixiseng;
 CREATE DATABASE shixiseng CHARSET=UTF8;
 USE shixiseng;
+ /**
+    table：sxs_user
+	用户编号
+    用户名
+    密码
+    电话
+    用户类型
+ */
 create table sxs_user(
-     uid INT PRIMARY KEY AUTO_INCREMENT, /*用户编号*/
-     uname VARCHAR(32),                  /*用户名*/
-     upwd VARCHAR(32),                   /*密码*/
-     phone VARCHAR(11) not null unique,					 /*电话*/
-     utype INT                   		 /*用户类型*/
+     uid INT PRIMARY KEY AUTO_INCREMENT, 
+     uname VARCHAR(32),                 
+     upwd VARCHAR(32),                   
+     phone VARCHAR(11) not null unique,					 
+     utype INT                   		 
 );
+
 INSERT INTO sxs_user VALUES
 ( null, 'qiyeadmin', '123456', '13501234567',0),
 ( null, 'xstest', '123456', '15210250655',1);
+ /**
+    table：sxs_companey
+	公司编号
+	公司名
+	公司注册
+	公司类型
+	公司规模
+	公司主页被点赞数
+	公司头像
+	公司简介
+	公司城市
+	公司概述
+ */
 create table sxs_companey(
-	cid INT PRIMARY KEY AUTO_INCREMENT, /*公司编号*/
-	cname VARCHAR(32),                  /*公司名*/
-	cnameL VARCHAR(64),                 /*公司注册名*/
-	ctype VARCHAR(32),                  /*公司类型*/
-	csize VARCHAR(32),					/*公司规模*/
-	cThumb INT,					 		/*公司主页被点赞数*/
-	cimg VARCHAR(128),				    /*公司头像*/
-	cdesc VARCHAR(128),					/*公司简介*/
-	ccity VARCHAR(16),				    /*公司城市*/
-	csummary VARCHAR(3000)   			/*公司概述*/
+	cid INT PRIMARY KEY AUTO_INCREMENT, 
+	cname VARCHAR(32),                  	
+	cnameL VARCHAR(64),                 
+	ctype VARCHAR(32),                  
+	csize VARCHAR(32),					
+	cThumb INT,					 		
+	cimg VARCHAR(128),				    
+	cdesc VARCHAR(128),					
+	ccity VARCHAR(16),				    
+	csummary VARCHAR(3000)   			
 );
 INSERT INTO sxs_companey VALUES
 (null,'搜狐','北京搜狐新媒体信息技术有限公司','互联网','2000人以上',0,'FFD0580F6614523321B60107593C3191.png','中国领先的新媒体、网络游戏、搜索及无线互联网服务公司','北京','搜狐集团是中国领先的新媒体、网络游戏、搜索及无线互联网服务公司，拥有搜狐公司（NASDAQ: SOHU）和畅游公司（NASDAQ:CYOU）两家美国纳斯达克上市公司，是中文世界最强劲的互联网品牌。在移动互联网方面，搜狐新闻客户端是中国最大的移动媒体平台，2012年首创即时新闻+订阅模式，2014年成为首个推出“个性化”阅读功能的门户新闻客户端。'), 
@@ -33,13 +55,45 @@ INSERT INTO sxs_companey VALUES
 (null,'霍尼韦尔','北京字节跳动科技有限公司','移动互联网','2000人以上',2,'D962EAF0FD18F91AF184E98672CAEE26.png','致力于发明制造先进技术以应对全球宏观趋势下的严苛挑战','上海','霍尼韦尔是《财富》百强公司，致力于发明制造先进技术以应对全球宏观趋势下的严苛挑战，例如生命安全、安防和能源。公司在全球范围内拥有大约 130,000 名员工，其中包括 19,000 多名工程师和科学家。我们高度关注产品及服务的质量、交付、价值和技术，持之以恒，毫不懈怠。'),
 (null,'小米','北京小米科技有限公司','手机研发','500-1000人',3,'E95E10B09101573B1FF38FBC014489FA.png','一家专注于智能产品自主研发的移动互联网公司','北京','小米公司成立于2010年4月，是一家专注于智能产品自主研发的移动互联网公司。“为发烧而生”是小米的产品概念。小米公司首创了用互联网模式开发手机操作系统、发烧友参与开发改进的模式。'),
 (null,'搜狐','北京搜狐新媒体信息技术有限公司','互联网','2000人以上',2,'FFD0580F6614523321B60107593C3191.png','中国领先的新媒体、网络游戏、搜索及无线互联网服务公司','北京','搜狐集团是中国领先的新媒体、网络游戏、搜索及无线互联网服务公司，拥有搜狐公司（NASDAQ: SOHU）和畅游公司（NASDAQ:CYOU）两家美国纳斯达克上市公司，是中文世界最强劲的互联网品牌。在移动互联网方面，搜狐新闻客户端是中国最大的移动媒体平台，2012年首创即时新闻+订阅模式，2014年成为首个推出“个性化”阅读功能的门户新闻客户端。');
+ /**
+    table：sxs_companey
+	工作编号  
+	公司编号  
+	工作名称  
+	工作地点  
+	工作最小日薪	
+	工作最大日薪	
+	工作时长  
+	发布时间  
+	公司福利  
+	工作详情  
+	工作截止时间
+ */
 create table sxs_job(
-	cid INT PRIMARY KEY AUTO_INCREMENT, /*公司编号*/
-	jid INT AUTO_INCREMENT, 			/*工作编号*/
-	jtitle VARCHAR(64),                 /*工作名称*/
-	jaddress VARCHAR(64),				/*工作地点*/
-	jsalary VARCHAR(16),				/*工作日薪*/
-	jtime VARCHAR(16),					/*工作时长*/
-	jpubTime BIGINT,                    /*发布时间*/
-	jbenefits 
+	jid INT PRIMARY KEY  AUTO_INCREMENT,
+	cid INT,                            
+	jtitle VARCHAR(64),                 
+	jaddress VARCHAR(64),				
+	jminsalary INT,				        
+	jmaxsalary INT,				        
+	jtime VARCHAR(16),			        
+	jlongMonth VARCHAR(16),					
+	jpubTime DATETIME,  
+	jisFullMember BIT,                 
+	jbenefits VARCHAR(256),              
+	jdetails VARCHAR (1024),             
+	jendTime DATETIME    
+);
+INSERT INTO sxs_job VALUES(
+	null,7,"前端开发工程师","北京市海淀区",150,200,5,3,1510659732002,1,"实习转正机会；技术提升快；团队氛围好；年轻有活力","工作要求：1、本科学历以上，有前端开发经验者优先；2、熟悉HTML、CSS及JavaScript等Web前端技术；3、熟悉Linux系统，对算法、数据结构以及后台开发(C/C++/PHP/Java等)有一定了解；4、有良好的技术视野和规划能力；5、良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力；",1511827200000
+),(
+	null,7,"前端开发工程师","北京市海淀区",150,200,5,3,1510659732002,1,"实习转正机会；技术提升快；团队氛围好；年轻有活力","工作要求：1、本科学历以上，有前端开发经验者优先；2、熟悉HTML、CSS及JavaScript等Web前端技术；3、熟悉Linux系统，对算法、数据结构以及后台开发(C/C++/PHP/Java等)有一定了解；4、有良好的技术视野和规划能力；5、良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力；",1511827200000
+),(
+	null,7,"前端开发工程师","北京市海淀区",150,200,5,3,1510659732002,1,"实习转正机会；技术提升快；团队氛围好；年轻有活力","工作要求：1、本科学历以上，有前端开发经验者优先；2、熟悉HTML、CSS及JavaScript等Web前端技术；3、熟悉Linux系统，对算法、数据结构以及后台开发(C/C++/PHP/Java等)有一定了解；4、有良好的技术视野和规划能力；5、良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力；",1511827200000
+),(
+	null,7,"前端开发工程师","北京市海淀区",150,200,5,3,1510659732002,1,"实习转正机会；技术提升快；团队氛围好；年轻有活力","工作要求：1、本科学历以上，有前端开发经验者优先；2、熟悉HTML、CSS及JavaScript等Web前端技术；3、熟悉Linux系统，对算法、数据结构以及后台开发(C/C++/PHP/Java等)有一定了解；4、有良好的技术视野和规划能力；5、良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力；",1511827200000
+),(
+	null,7,"前端开发工程师","北京市海淀区",150,200,5,3,1510659732002,1,"实习转正机会；技术提升快；团队氛围好；年轻有活力","工作要求：1、本科学历以上，有前端开发经验者优先；2、熟悉HTML、CSS及JavaScript等Web前端技术；3、熟悉Linux系统，对算法、数据结构以及后台开发(C/C++/PHP/Java等)有一定了解；4、有良好的技术视野和规划能力；5、良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力；",1511827200000
+),(
+	null,7,"前端开发工程师","北京市海淀区",150,200,5,3,1510659732002,1,"实习转正机会；技术提升快；团队氛围好；年轻有活力","工作要求：1、本科学历以上，有前端开发经验者优先；2、熟悉HTML、CSS及JavaScript等Web前端技术；3、熟悉Linux系统，对算法、数据结构以及后台开发(C/C++/PHP/Java等)有一定了解；4、有良好的技术视野和规划能力；5、良好的沟通与表达能力、思路清晰，较强的动手能力与逻辑分析能力；",1511827200000
 );

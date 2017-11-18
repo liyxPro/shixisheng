@@ -27,7 +27,7 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 100%; 
 } 
 q:before,q:after { 
-    content:”; 
+    content:"";
 } 
 abbr,acronym { 
     border: 0; 
@@ -70,4 +70,10 @@ a{
    vertical-align: -0.15em;
    fill: currentColor;
    overflow: hidden;
+}
+body{
+    background-color: #f1f4f6;
+}
+.wrap{
+    height: 100%;
 }
