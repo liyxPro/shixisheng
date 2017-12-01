@@ -1,7 +1,7 @@
 <?php
 require('init.php');
 
-$sql = "SELECT jtitle,jtime,jlongMonth,jminsalary,jmaxsalary,cname,ctype,cimg,ccity FROM sxs_companey sc join sxs_job sj on sc.cid=sj.cid";
+$sql = "SELECT jpubTime,jtitle,jtime,jlongMonth,jminsalary,jmaxsalary,cname,ctype,cimg,ccity FROM sxs_companey sc join sxs_job sj on sc.cid=sj.cid";
 $result = mysqli_query($conn,$sql);
 while( true ){
     //从结果集中读取一行记录
@@ -11,4 +11,4 @@ while( true ){
     }
     $output[] = $row;
 }
-echo json_encode($output);
+echo $_GET['callback']."(".json_encode($output).")";
