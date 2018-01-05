@@ -11,7 +11,7 @@
     	$cids[] = $row;
 	}
 	foreach($cids as $cid){
-		$sql="select cname,ccity,cimg from sxs_companey where cid=$cid[cid]";
+		$sql="select cname,ccity,ctype,cimg from sxs_companey where cid=$cid[cid]";
 		$result = mysqli_query($conn,$sql);
 		while( true ){
     		//从结果集中读取一行记录
@@ -23,7 +23,7 @@
 	    }
 	    
 	}
-	$sql="select jid,jtitle,jtype,jsalary,jdays,jpubTime from sxs_job";
+	$sql="select jid,jtitle,jtime,jminsalary,jmaxsalary,jpubTime from sxs_job";
 	$result = mysqli_query($conn,$sql);    
 	for ($i= 0;$i< count($output); $i++){
 	    while( true ){

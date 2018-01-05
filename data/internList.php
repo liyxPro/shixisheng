@@ -1,7 +1,7 @@
 <?php
 require('init.php');
-
-$sql = "SELECT jpubTime,jtitle,jtime,jlongMonth,jminsalary,jmaxsalary,cname,ctype,cimg,ccity FROM sxs_companey sc join sxs_job sj on sc.cid=sj.cid";
+@$kw=$_REQUEST['keywords'];
+$sql = "SELECT jpubTime,jtitle,jtime,jlongMonth,jminsalary,jmaxsalary,cname,ctype,cimg,ccity FROM sxs_companey sc join sxs_job sj on sc.cid=sj.cid where cname like '%$kw%' or jtitle like '%$kw%'";
 $result = mysqli_query($conn,$sql);
 while( true ){
     //从结果集中读取一行记录

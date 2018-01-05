@@ -80,6 +80,9 @@
                 $(".model_bg").load("tpl/login.html");
 	            $("#nav").load("tpl/header.html");
 	            $("#footer").load("tpl/footer.html");
+				$(".gender").on("click","#man,#woman",(e)=>{
+				  console.log(e.target);
+				})
             })
         </script>
     </body>

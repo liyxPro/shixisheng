@@ -1,4 +1,5 @@
-$(function () {
+console.log("indexjs");
+$(function () {	
 	$(".model_bg").load("tpl/login.html");
 	$("#nav").load("tpl/header.html");
 	$("#footer").load("tpl/footer.html");
@@ -86,7 +87,11 @@ $(function () {
 	$("#search_btn").on("click", function (e) {
 		e.preventDefault();
 		var val = $(".search_input").val();
-		window.location.href = "search.html?keywords=" + val;
+		if(val==""){
+		  window.location.href = "search.html";
+		}else{
+		  window.location.href = "search.html?keywords=" + val;
+		}
 	})
 
 })

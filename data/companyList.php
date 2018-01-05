@@ -1,7 +1,7 @@
 <?php
 require('init.php');
 
-$sql = "SELECT cname,cdesc,cimg FROM sxs_companey";
+$sql = "SELECT cname,cdesc,cimg FROM sxs_companey limit 0,8";
 $result = mysqli_query($conn,$sql);
 while( true ){
     //从结果集中读取一行记录

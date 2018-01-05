@@ -232,6 +232,7 @@
     			padding: 0 20px 0 30px;
 				transition: border-radius ease .35s;
 				text-decoration: none;
+				cursor: pointer;
 			}
 			.job_link{
 				overflow: hidden;
@@ -272,7 +273,8 @@
     			line-height: 31px;
     			top: -15px;
     			background: rgba(0,0,0,0.6);
-    			transition: top ease 0.5s; 
+    			/*transition: top ease 0.5s; */
+				transition: all ease .5s;
 		    }
 		    /*main*/
 		   #bgC{
